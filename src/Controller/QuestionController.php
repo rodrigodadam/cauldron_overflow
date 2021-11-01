@@ -14,4 +14,15 @@ class QuestionController
     {
         return new Response('What is this?');
     }
+
+    /**
+     * @Route("/questions/{question}")
+     */
+    public function show($question)
+    {
+        return new Response(sprintf(
+            'Future page to show a question "%s"',
+            ucwords(str_replace('-', ' ', $question))
+        ));
+    }
 }
